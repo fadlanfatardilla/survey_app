@@ -1,0 +1,105 @@
+body {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.container {
+  margin-top: 150px;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.form-label {
+  color: #ffcc00;
+}
+
+.btn-primary {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #e6b800;
+  border-color: #e6b800;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.alert {
+  color: black;
+}
+
+.input-group-text {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  cursor: pointer;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.register-link a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.loading-animation {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-animation .block {
+  width: 40px;
+  height: 40px;
+  background-color: #ffcc00;
+  margin: 0 10px;
+  animation: loading 2s infinite ease-in-out;
+}
+
+.loading-animation .block:nth-child(2) {
+  background-color: #ff9900;
+}
+
+.loading-animation .block:nth-child(3) {
+  background-color: #ff6600;
+}
+
+.loading-animation .block:nth-child(4) {
+  background-color: #ff3300;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

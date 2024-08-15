@@ -1,0 +1,67 @@
+body {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.container {
+  margin-top: 80px;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.form-label {
+  color: #ffcc00;
+}
+
+.btn-primary {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #e6b800;
+  border-color: #e6b800;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.alert {
+  color: black;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.login-link a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.input-group-text {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  cursor: pointer;
+}
+
+select.form-control {
+  appearance: none;
+  background: url('data:image/svg+xml,%3Csvg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M4.318 6l4.324 4.364L13.636 6" stroke="%23ffcc00" stroke-width="2"/%3E%3C/svg%3E')
+    no-repeat right 12px center;
+  background-color: white;
+  padding-right: 30px;
+}
