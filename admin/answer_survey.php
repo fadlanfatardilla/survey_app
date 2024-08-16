@@ -89,9 +89,9 @@ if (!$survey) {
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <style>
         body {
-            background: #f0f2f5;
+            background: #2c2f33;
             font-family: 'Poppins', sans-serif;
-            color: #333;
+            color: #dcdde1;
             margin: 0;
             padding: 0;
         }
@@ -102,12 +102,14 @@ if (!$survey) {
         }
 
         .card {
+            background-color: #23272a;
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            color: #dcdde1;
         }
 
         .card-header {
-            background: #007bff;
+            background: #7289da;
             color: #fff;
             border-radius: 12px 12px 0 0;
             font-weight: 600;
@@ -115,7 +117,6 @@ if (!$survey) {
         }
 
         .card-body {
-            background: #fff;
             padding: 20px;
         }
 
@@ -124,8 +125,8 @@ if (!$survey) {
         }
 
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #7289da;
+            border-color: #7289da;
             border-radius: 8px;
             padding: 12px 24px;
             font-weight: 600;
@@ -133,13 +134,13 @@ if (!$survey) {
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #004085;
+            background-color: #5b6eae;
+            border-color: #4b5990;
         }
 
         .btn-secondary {
-            background-color: #6c757d;
-            border-color: #6c757d;
+            background-color: #99aab5;
+            border-color: #99aab5;
             border-radius: 8px;
             padding: 12px 24px;
             font-weight: 600;
@@ -147,13 +148,21 @@ if (!$survey) {
         }
 
         .btn-secondary:hover {
-            background-color: #5a6268;
-            border-color: #545b62;
+            background-color: #7f8c8d;
+            border-color: #70787a;
+        }
+
+        textarea {
+            background-color: #2c2f33;
+            color: #dcdde1;
+            border: 1px solid #99aab5;
+            border-radius: 8px;
+            padding: 10px;
         }
 
         textarea:focus {
-            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(114, 137, 218, 0.25);
+            border-color: #7289da;
         }
 
         .btn-back {
