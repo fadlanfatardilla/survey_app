@@ -24,128 +24,137 @@ $surveys = $stmt->fetchAll();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #343a40;
-            color: #e9ecef;
-        }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #343a40;
+        color: #e9ecef;
+    }
 
-        .container {
-            margin-top: 30px;
-            max-width: 900px;
-        }
+    .container {
+        margin-top: 30px;
+        max-width: 900px;
+    }
 
-        .dashboard-header {
-            background-color: #495057;
-            color: #e9ecef;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
+    .dashboard-header {
+        background-color: #495057;
+        color: #e9ecef;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
 
-        .dashboard-header h2 {
-            margin: 0;
-        }
+    .dashboard-header h2 {
+        margin: 0;
+    }
 
-        .dashboard-header p {
-            margin: 10px 0 20px;
-        }
+    .dashboard-header p {
+        margin: 10px 0 20px;
+    }
 
-        .btn-create-survey {
-            align-self: flex-end;
-        }
+    .btn-create-survey {
+        color: #f39c12;
+        font-size: 24px;
+        margin-right: 15px;
+        transition: color 0.3s, transform 0.3s;
+        cursor: pointer;
+    }
 
-        .survey-card {
-            border-radius: 10px;
-            background-color: #495057;
-            color: #e9ecef;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
+    .btn-create-survey:hover {
+        color: #d35400;
+        transform: scale(1.2);
+    }
 
-        .survey-card:hover {
-            transform: scale(1.02);
-        }
+    .logout-icon {
+        cursor: pointer;
+        color: #e9ecef;
+        font-size: 24px;
+        transition: color 0.3s;
+    }
 
-        .btn-primary-custom {
-            background-color: #007bff;
-            border-color: #007bff;
-            color: #e9ecef;
-        }
+    .logout-icon:hover {
+        color: #dc3545;
+    }
 
-        .btn-primary-custom:hover {
-            background-color: #0056b3;
-            border-color: #004085;
-        }
+    .survey-card {
+        border-radius: 10px;
+        background-color: #495057;
+        color: #e9ecef;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
 
-        .survey-card-body {
-            padding: 20px;
-        }
+    .survey-card:hover {
+        transform: scale(1.02);
+    }
 
-        /* Styling modal */
-        .modal-content {
-            border-radius: 15px;
-            background-color: #212529;
-            color: #e9ecef;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
+    .survey-card-body {
+        padding: 20px;
+    }
 
-        .modal-header {
-            background-color: #343a40;
-            color: #e9ecef;
-            border-bottom: none;
-            border-radius: 15px 15px 0 0;
-        }
+    .modal-content {
+        border-radius: 15px;
+        background-color: #212529;
+        color: #e9ecef;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 
-        .modal-title {
-            color: #e9ecef;
-        }
+    .modal-header {
+        background-color: #343a40;
+        color: #e9ecef;
+        border-bottom: none;
+        border-radius: 15px 15px 0 0;
+    }
 
-        .modal-body {
-            padding: 20px;
-            color: #e9ecef;
-        }
+    .modal-title {
+        color: #e9ecef;
+    }
 
-        .modal-footer {
-            background-color: #343a40;
-            border-top: none;
-            border-radius: 0 0 15px 15px;
-        }
+    .modal-body {
+        padding: 20px;
+        color: #e9ecef;
+    }
 
-        .btn-secondary {
-            background-color: #007bff;
-            border-color: #007bff;
-            color: #e9ecef;
-        }
+    .modal-footer {
+        background-color: #343a40;
+        border-top: none;
+        border-radius: 0 0 15px 15px;
+    }
 
-        .btn-secondary:hover {
-            background-color: #0056b3;
-            border-color: #004085;
-        }
+    .btn-secondary {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #e9ecef;
+    }
 
-        .list-group-item {
-            background-color: #212529;
-            color: #e9ecef;
-            border: none;
-            border-bottom: 1px solid #343a40;
-        }
+    .btn-secondary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
 
-        .list-group-item:last-child {
-            border-bottom: none;
-        }
+    .list-group-item {
+        background-color: #212529;
+        color: #e9ecef;
+        border: none;
+        border-bottom: 1px solid #343a40;
+    }
 
-        /* Smooth transition for modal opening */
-        .fade.show {
-            transition: opacity 0.3s ease-in-out;
-        }
+    .list-group-item:last-child {
+        border-bottom: none;
+    }
 
-        .btn-close {
-            filter: brightness(0) invert(1);
-        }
+    .fade.show {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .btn-close {
+        filter: brightness(0) invert(1);
+    }
     </style>
 </head>
 
@@ -157,29 +166,29 @@ $surveys = $stmt->fetchAll();
                 <h2>Client Dashboard</h2>
                 <p>Welcome to your dashboard. Here you can view and create surveys.</p>
             </div>
-            <!-- Tombol Create New Survey -->
-            <a href="create_survey.php" class="btn btn-primary-custom btn-create-survey">Create New Survey</a>
+            <div class="d-flex align-items-center">
+                <i class="fas fa-plus btn-create-survey" id="createSurveyIcon" title="Create New Survey"></i>
+                <i class="fas fa-sign-out-alt logout-icon" id="logoutIcon" title="Logout"></i>
+            </div>
         </div>
 
-        <!-- Daftar Survei -->
         <h3 class="mt-4">Available Surveys</h3>
         <div class="row">
             <?php foreach ($surveys as $survey): ?>
-                <div class="col-md-4 mb-4">
-                    <div class="card survey-card">
-                        <div class="card-body survey-card-body">
-                            <h5 class="card-title"><?= htmlspecialchars($survey['title']) ?></h5>
-                            <p class="card-text"><?= htmlspecialchars($survey['description']) ?></p>
-                            <button type="button" class="btn btn-primary-custom btn-view-details"
-                                data-id="<?= $survey['id'] ?>">View Details</button>
-                        </div>
+            <div class="col-md-4 mb-4">
+                <div class="card survey-card">
+                    <div class="card-body survey-card-body">
+                        <h5 class="card-title"><?= htmlspecialchars($survey['title']) ?></h5>
+                        <p class="card-text"><?= htmlspecialchars($survey['description']) ?></p>
+                        <button type="button" class="btn btn-secondary btn-view-details"
+                            data-id="<?= $survey['id'] ?>">View Details</button>
                     </div>
                 </div>
+            </div>
             <?php endforeach; ?>
         </div>
     </div>
 
-    <!-- Modal -->
     <div class="modal fade" id="surveyModal" tabindex="-1" aria-labelledby="surveyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -200,40 +209,61 @@ $surveys = $stmt->fetchAll();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.btn-view-details').forEach(button => {
-                button.addEventListener('click', function() {
-                    const surveyId = this.getAttribute('data-id');
-                    fetchSurveyDetails(surveyId);
-                });
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn-view-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const surveyId = this.getAttribute('data-id');
+                fetchSurveyDetails(surveyId);
             });
         });
 
-        function fetchSurveyDetails(id) {
-            fetch(`view_survey.php?id=${id}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        const modalBody = document.querySelector('#surveyModal .modal-body');
-                        modalBody.innerHTML = `
-                        <h5>${data.survey.title}</h5>
-                        <p>${data.survey.description}</p>
-                        <h6>Admin Answers:</h6>
-                        <ul class="list-group">
-                            ${data.answers.length > 0 ? data.answers.map(answer => `
-                                <li class="list-group-item">${answer.answer}</li>
-                            `).join('') : '<li class="list-group-item">No answers from admin yet.</li>'}
-                        </ul>
-                    `;
-                        const surveyModal = new bootstrap.Modal(document.getElementById('surveyModal'));
-                        surveyModal.show();
-                    } else {
-                        alert('Survey not found or error loading details.');
-                    }
-                })
-                .catch(error => console.error('Error fetching survey details:', error));
-        }
+        document.getElementById('createSurveyIcon').addEventListener('click', function() {
+            window.location.href = 'create_survey.php';
+        });
+
+        document.getElementById('logoutIcon').addEventListener('click', function() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You will be logged out!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, logout!',
+                cancelButtonText: 'No, cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '../auth/logout.php'; // Redirect to logout script
+                }
+            });
+        });
+    });
+
+    function fetchSurveyDetails(id) {
+        fetch(`view_survey.php?id=${id}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const modalBody = document.querySelector('#surveyModal .modal-body');
+                    modalBody.innerHTML = `
+                            <h5>${data.survey.title}</h5>
+                            <p>${data.survey.description}</p>
+                            <h6>Admin Answers:</h6>
+                            <ul class="list-group">
+                                ${data.answers.length > 0 ? data.answers.map(answer => `
+                                    <li class="list-group-item">${answer.answer}</li>
+                                `).join('') : '<li class="list-group-item">No answers from admin yet.</li>'}
+                            </ul>
+                        `;
+                    const surveyModal = new bootstrap.Modal(document.getElementById('surveyModal'));
+                    surveyModal.show();
+                } else {
+                    Swal.fire('Error', 'Unable to fetch survey details', 'error');
+                }
+            });
+    }
     </script>
 </body>
 
