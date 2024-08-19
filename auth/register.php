@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $pdo->prepare("INSERT INTO users (username, password, role) VALUES (?, ?, ?)");
     if ($stmt->execute([$username, $password, $role])) {
         $success = "Registration successful!";
-        $redirect = "login.php"; // Redirect to login page after successful registration
+        $redirect = "login.php";
     } else {
         $error = "Registration failed";
     }
@@ -73,16 +73,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     const password = document.querySelector('#password');
 
     togglePassword.addEventListener('click', function() {
-        // Toggle the type attribute
         const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
         password.setAttribute('type', type);
 
-        // Toggle the eye / eye slash icon
         this.querySelector('i').classList.toggle('fa-eye');
         this.querySelector('i').classList.toggle('fa-eye-slash');
     });
 
-    // Show SweetAlert2 notification based on PHP variables
     <?php if (isset($success)): ?>
     Swal.fire({
         icon: 'success',

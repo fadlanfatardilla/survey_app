@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['role'] = $user['role'];
 
-        // Return JSON response for AJAX handling
         echo json_encode([
             'status' => 'success',
             'role' => $user['role']
@@ -52,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <h2>Login</h2>
         <?php if (isset($error)): ?>
-            <div class="alert alert-danger"><?= $error ?></div>
+        <div class="alert alert-danger"><?= $error ?></div>
         <?php endif; ?>
         <form id="loginForm" action="" method="post">
             <div class="mb-3">

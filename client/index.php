@@ -197,7 +197,6 @@ $surveys = $stmt->fetchAll();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Content will be loaded here by JavaScript -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -235,7 +234,7 @@ $surveys = $stmt->fetchAll();
                 cancelButtonText: 'No, cancel'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = '../auth/logout.php'; // Redirect to logout script
+                    window.location.href = '../auth/logout.php';
                 }
             });
         });

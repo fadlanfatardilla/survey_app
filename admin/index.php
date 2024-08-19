@@ -7,7 +7,6 @@ if (!isAdmin()) {
     exit();
 }
 
-// Query to get all surveys
 $stmt = $pdo->query("SELECT * FROM surveys");
 $surveys = $stmt->fetchAll();
 ?>
@@ -99,9 +98,7 @@ $surveys = $stmt->fetchAll();
 
         .modal-content {
             background: #1e3c72;
-            /* Dark background for modal content */
             color: #fff;
-            /* White text color for better contrast */
             border-radius: 12px;
         }
 
@@ -193,9 +190,8 @@ $surveys = $stmt->fetchAll();
     <script>
         $(document).ready(function() {
             $('.btn-view').on('click', function() {
-                var surveyId = $(this).data('id'); // Get the survey ID from the button data-id attribute
+                var surveyId = $(this).data('id');
 
-                // Make AJAX request to fetch survey details
                 $.ajax({
                     url: 'view_survey.php',
                     type: 'GET',
@@ -203,10 +199,10 @@ $surveys = $stmt->fetchAll();
                         id: surveyId
                     },
                     success: function(response) {
-                        $('#modalBody').html(response); // Load the response into the modal body
+                        $('#modalBody').html(response);
                         var surveyModal = new bootstrap.Modal(document.getElementById(
                             'surveyModal'));
-                        surveyModal.show(); // Show the modal
+                        surveyModal.show();
                     }
                 });
             });

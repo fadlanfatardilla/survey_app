@@ -24,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 
-<!-- UI Halaman Create Survey untuk Client -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -139,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
     document.getElementById('surveyForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault();
 
         const form = event.target;
         const formData = new FormData(form);
@@ -164,7 +163,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         }
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            // Redirect to index.php after showing the success message
                             window.location.href = 'index.php';
                         }
                     });
