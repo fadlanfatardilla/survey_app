@@ -80,7 +80,28 @@ $surveys = $stmt->fetchAll();
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/index_admin.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".btn-view").on("click", function() {
+                var surveyId = $(this).data("id");
+
+                $.ajax({
+                    url: "view_survey.php",
+                    type: "GET",
+                    data: {
+                        id: surveyId,
+                    },
+                    success: function(response) {
+                        $("#modalBody").html(response);
+                        var surveyModal = new bootstrap.Modal(
+                            document.getElementById("surveyModal")
+                        );
+                        surveyModal.show();
+                    },
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
