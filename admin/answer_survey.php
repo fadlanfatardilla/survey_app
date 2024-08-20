@@ -9,13 +9,11 @@ if (!isAdmin()) {
 
 $survey_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-// Periksa apakah survei sudah terjawab
 $stmt = $pdo->prepare("SELECT COUNT(*) FROM answers WHERE survey_id = ?");
 $stmt->execute([$survey_id]);
 $is_answered = $stmt->fetchColumn() > 0;
 
 if ($is_answered) {
-    // Jika sudah terjawab, tampilkan alert dengan SweetAlert2
     echo "<!DOCTYPE html>
     <html lang='en'>
     <head>
@@ -87,89 +85,7 @@ if (!$survey) {
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: #2c2f33;
-            font-family: 'Poppins', sans-serif;
-            color: #dcdde1;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            margin-top: 40px;
-            max-width: 800px;
-        }
-
-        .card {
-            background-color: #23272a;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            color: #dcdde1;
-        }
-
-        .card-header {
-            background: #7289da;
-            color: #fff;
-            border-radius: 12px 12px 0 0;
-            font-weight: 600;
-            padding: 15px 20px;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .alert {
-            border-radius: 8px;
-        }
-
-        .btn-primary {
-            background-color: #7289da;
-            border-color: #7289da;
-            border-radius: 8px;
-            padding: 12px 24px;
-            font-weight: 600;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #5b6eae;
-            border-color: #4b5990;
-        }
-
-        .btn-secondary {
-            background-color: #99aab5;
-            border-color: #99aab5;
-            border-radius: 8px;
-            padding: 12px 24px;
-            font-weight: 600;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background-color: #7f8c8d;
-            border-color: #70787a;
-        }
-
-        textarea {
-            background-color: #2c2f33;
-            color: #dcdde1;
-            border: 1px solid #99aab5;
-            border-radius: 8px;
-            padding: 10px;
-        }
-
-        textarea:focus {
-            box-shadow: 0 0 0 0.2rem rgba(114, 137, 218, 0.25);
-            border-color: #7289da;
-        }
-
-        .btn-back {
-            display: inline-block;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/answer_survey.css">
 </head>
 
 <body>

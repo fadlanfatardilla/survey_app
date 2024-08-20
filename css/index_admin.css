@@ -1,0 +1,106 @@
+body {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 50px;
+  max-width: 1200px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background: #ffcc00;
+  color: #333;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  padding: 10px 15px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.btn-custom {
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.btn-custom:hover {
+  opacity: 0.8;
+}
+
+.table {
+  color: #fff;
+}
+
+.table thead {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.table th {
+  color: #fff;
+}
+
+.table td {
+  color: #fff;
+  vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.table tbody a {
+  color: #fff;
+}
+
+.table tbody a:hover {
+  text-decoration: underline;
+}
+
+.modal-content {
+  background: #1e3c72;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #fff;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: 1px solid #fff;
+}
+
+.modal-title {
+  color: #ffcc00;
+  /* Title color */
+}
+
+.btn-secondary {
+  background: #2a5298;
+  border-color: #2a5298;
+}
+
+.btn-secondary:hover {
+  background: #1e3c72;
+  border-color: #1e3c72;
+}
