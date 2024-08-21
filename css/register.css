@@ -1,29 +1,30 @@
 body {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
+  background: #0d1117; /* Menggunakan warna gelap untuk background */
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: #c9d1d9; /* Warna teks agar terlihat lebih jelas di background gelap */
 }
 
 .container {
   margin-top: 80px;
   max-width: 400px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #161b22; /* Warna background form lebih gelap */
   padding: 40px;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan shadow untuk memberikan efek depth */
 }
 
 .form-label {
-  color: #ffcc00;
+  color: #ffcc00; /* Warna label form */
 }
 
 .btn-primary {
-  background-color: #ffcc00;
+  background-color: #ffcc00; /* Warna tombol */
   border-color: #ffcc00;
   color: black;
 }
 
 .btn-primary:hover {
-  background-color: #e6b800;
+  background-color: #e6b800; /* Warna tombol saat hover */
   border-color: #e6b800;
 }
 
@@ -31,6 +32,7 @@ h2 {
   text-align: center;
   margin-bottom: 30px;
   font-weight: bold;
+  color: #c9d1d9; /* Warna judul form */
 }
 
 .alert {
@@ -41,6 +43,7 @@ h2 {
   text-align: center;
   margin-top: 20px;
   font-size: 0.9em;
+  color: #c9d1d9; /* Warna teks untuk link */
 }
 
 .login-link a {
