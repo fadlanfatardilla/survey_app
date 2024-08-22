@@ -22,13 +22,16 @@ $surveys = $stmt->fetchAll();
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/index_admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <div class="card">
-            <div class="card-header">
-                Admin Dashboard
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>Admin Dashboard</span>
+                <i id="logoutIcon" class="bi bi-box-arrow-right" data-bs-toggle="tooltip" title="Logout"></i>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-hover">
@@ -98,6 +101,29 @@ $surveys = $stmt->fetchAll();
                         );
                         surveyModal.show();
                     },
+                });
+            });
+
+            $("#logoutIcon").on("click", function() {
+                Swal.fire({
+                    title: 'Are you sure you want to logout?',
+                    text: "You will be redirected to the login page.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#007bff',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, logout',
+                    cancelButtonText: 'Cancel',
+                    customClass: {
+                        title: 'swal2-title-custom',
+                        popup: 'swal2-popup-custom',
+                        confirmButton: 'swal2-confirm-custom',
+                        cancelButton: 'swal2-cancel-custom'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '../auth/logout.php';
+                    }
                 });
             });
         });

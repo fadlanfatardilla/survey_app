@@ -20,13 +20,22 @@ body {
 
 .card-header {
   background: linear-gradient(45deg, #007bff, #0056b3);
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 20px;
-    border-bottom: 3px solid #0056b3;
-    border-radius: 8px 8px 0 0;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 20px;
+  border-bottom: 3px solid #0056b3;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+
+.card-header i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
 }
 
 .card-body {
@@ -106,4 +115,39 @@ body {
 .btn-secondary:hover {
   background: #1e3c72;
   border-color: #1e3c72;
+}
+
+#logoutIcon {
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#logoutIcon:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.swal2-title-custom {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+}
+
+.swal2-popup-custom {
+  background: #2a5298;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.swal2-confirm-custom {
+  background: #007bff !important;
+  border-color: #007bff !important;
+  color: #fff !important;
+}
+
+.swal2-cancel-custom {
+  background: #d33 !important;
+  border-color: #d33 !important;
+  color: #fff !important;
 }
