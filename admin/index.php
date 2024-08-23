@@ -44,16 +44,16 @@ $surveys = $stmt->fetchAll();
                     </thead>
                     <tbody>
                         <?php foreach ($surveys as $index => $survey): ?>
-                            <tr>
-                                <td><?= $index + 1 ?></td>
-                                <td><?= htmlspecialchars($survey['title']) ?></td>
-                                <td>
-                                    <button class="btn btn-primary btn-custom btn-view"
-                                        data-id="<?= $survey['id'] ?>">View</button>
-                                    <a href="answer_survey.php?id=<?= $survey['id'] ?>"
-                                        class="btn btn-success btn-custom">Answer</a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?= $index + 1 ?></td>
+                            <td><?= htmlspecialchars($survey['title']) ?></td>
+                            <td>
+                                <button class="btn btn-primary btn-custom btn-view"
+                                    data-id="<?= $survey['id'] ?>">View</button>
+                                <a href="answer_survey.php?id=<?= $survey['id'] ?>"
+                                    class="btn btn-success btn-custom">Answer</a>
+                            </td>
+                        </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
@@ -82,51 +82,8 @@ $surveys = $stmt->fetchAll();
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".btn-view").on("click", function() {
-                var surveyId = $(this).data("id");
+    <script src="../js/index_admin.js"></script>
 
-                $.ajax({
-                    url: "view_survey.php",
-                    type: "GET",
-                    data: {
-                        id: surveyId,
-                    },
-                    success: function(response) {
-                        $("#modalBody").html(response);
-                        var surveyModal = new bootstrap.Modal(
-                            document.getElementById("surveyModal")
-                        );
-                        surveyModal.show();
-                    },
-                });
-            });
-
-            $("#logoutIcon").on("click", function() {
-                Swal.fire({
-                    title: 'Are you sure you want to logout?',
-                    text: "You will be redirected to the login page.",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#007bff',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, logout',
-                    cancelButtonText: 'Cancel',
-                    customClass: {
-                        title: 'swal2-title-custom',
-                        popup: 'swal2-popup-custom',
-                        confirmButton: 'swal2-confirm-custom',
-                        cancelButton: 'swal2-cancel-custom'
-                    }
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = '../auth/logout.php';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
