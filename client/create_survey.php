@@ -35,80 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-    <style>
-    body {
-        background: linear-gradient(to right, #1e3c72, #2a5298);
-        font-family: 'Poppins', sans-serif;
-        color: #fff;
-    }
+    <link rel="stylesheet" href="../css/create_survey.css">
 
-    .container {
-        margin-top: 50px;
-        max-width: 600px;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 40px;
-        border-radius: 12px;
-    }
 
-    .container h2 {
-        margin-bottom: 30px;
-        font-weight: 600;
-        color: #ffcc00;
-    }
-
-    .form-control,
-    .form-control:focus {
-        background-color: #333;
-        border-color: #444;
-        color: #fff;
-        border-radius: 6px;
-    }
-
-    .form-label {
-        color: #ffcc00;
-    }
-
-    .btn-primary {
-        background-color: #ffcc00;
-        border-color: #ffcc00;
-        color: black;
-        border-radius: 6px;
-        font-weight: 600;
-        padding: 12px 24px;
-        transition: background-color 0.3s, border-color 0.3s;
-    }
-
-    .btn-primary:hover {
-        background-color: #e6b800;
-        border-color: #e6b800;
-    }
-
-    .btn-secondary {
-        background-color: #444;
-        border-color: #555;
-        color: #fff;
-        border-radius: 6px;
-        font-weight: 600;
-        padding: 8px 16px;
-        transition: background-color 0.3s, border-color 0.3s;
-    }
-
-    .btn-secondary:hover {
-        background-color: #333;
-        border-color: #444;
-    }
-
-    .alert {
-        border-radius: 6px;
-    }
-
-    .btn-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-    }
-    </style>
 </head>
 
 <body>
