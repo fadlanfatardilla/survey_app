@@ -37,7 +37,7 @@ $surveys = $stmt->fetchAll();
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>No</th>
                             <th>Title</th>
                             <th>Actions</th>
                         </tr>
@@ -70,7 +70,6 @@ $surveys = $stmt->fetchAll();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modalBody">
-                    <!-- Content will be loaded here via AJAX -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

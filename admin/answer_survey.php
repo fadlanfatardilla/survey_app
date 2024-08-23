@@ -96,9 +96,28 @@ if (!$survey) {
             </div>
             <div class="card-body">
                 <?php if (isset($success)): ?>
-                    <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '<?= htmlspecialchars($success) ?>',
+                    showConfirmButton: true,
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#3085d6',
+                    backdrop: `
+                                rgba(0,0,123,0.4)
+                                no-repeat
+                            `,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    allowOutsideClick: false
+                }).then(() => {
+                    window.location.href = 'index.php';
+                });
+                </script>
                 <?php elseif (isset($error)): ?>
-                    <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+                <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
                 <?php endif; ?>
                 <form action="" method="post">
                     <div class="mb-3">
